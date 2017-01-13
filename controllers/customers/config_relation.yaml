@@ -1,0 +1,8 @@
+orders:
+    label: Order
+    view:
+        list: $/acme/formist/models/order/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/acme/formist/models/order/fields.yaml
+        list: $/acme/formist/models/order/columns.yaml

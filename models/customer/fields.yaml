@@ -1,0 +1,46 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    company:
+        label: Company
+        span: auto
+
+    first_name:
+        label: First Name
+        span: left
+
+    last_name:
+        label: Last Name
+        span: right
+
+    street:
+        label: Street
+        span: left
+
+    house_number:
+        label: House Number
+        span: right
+
+    zipcode:
+        label: Zipcode
+        span: left
+
+    city:
+        label: City
+        span: right
+
+    email:
+        label: E-Mail
+        span: left
+
+    phone:
+        label: Phone
+        span: right
+
+    orders:
+        label: Orders
+        type: partial
+        path: field_orders

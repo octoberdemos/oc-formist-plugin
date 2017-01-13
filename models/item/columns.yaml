@@ -1,0 +1,10 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    product[name]:
+        label: Product
+
+    qty:
+        label: Qty

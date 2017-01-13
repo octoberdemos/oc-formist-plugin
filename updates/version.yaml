@@ -1,0 +1,10 @@
+1.0.1:
+  - Create DB Tables
+  - create_products_table.php
+  - create_orders_table.php
+  - create_order_items_table.php
+  - create_customers_table.php
+  - seed_products_table.php
+  - seed_customers_table.php
+
+1.0.2: First version of Formist

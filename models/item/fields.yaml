@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    product:
+        label: Product
+        type: recordfinder
+        list: $/acme/formist/models/product/columns.yaml
+        nameFrom: name
+
+    qty:
+        label: Qty
+        default: 1
+        span: left
+
+    price:
+        label: Price
+        dependsOn: product
+        defaultFrom: qty
+        span: right

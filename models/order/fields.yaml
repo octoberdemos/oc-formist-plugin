@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    code@update:
+        label: Code
+        span: left
+        readOnly: true
+
+    code@create:
+        label: Code
+        span: left
+        defaultFrom: setupCode
+
+    status:
+        label: Status
+        type: dropdown
+        span: right
+        options:
+            0: Open
+            1: Paid
+            2: Canceled
+
+    items:
+        label: Items
+        type: partial
+        path: field_items

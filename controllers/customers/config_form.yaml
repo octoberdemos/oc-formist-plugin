@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Customer
+
+# Model Form Field configuration
+form: $/acme/formist/models/customer/fields.yaml
+
+# Model Class name
+modelClass: Acme\Formist\Models\Customer
+
+# Default redirect location
+defaultRedirect: acme/formist/customers
+
+# Create page
+create:
+    title: Create Customer
+    redirect: acme/formist/customers/update/:id
+    redirectClose: acme/formist/customers
+
+# Update page
+update:
+    title: Edit Customer
+    redirect: acme/formist/customers
+    redirectClose: acme/formist/customers
+
+# Preview page
+preview:
+    title: Preview Customer
