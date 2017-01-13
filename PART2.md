@@ -4,8 +4,8 @@ Now that we understand the MVC pattern used in October -- see Part 1 if not alre
 
 We will loosely follow the same patterns introduced by the `FormController` and `ListController` behaviors. When implemented in a controller, these behaviors introduce page actions and AJAX handlers.
 
-- ListController adds action: index.
-- FormController adds actions: create, update, preview.
+- ListController adds action: `index`.
+- FormController adds actions: `create`, `update`, `preview`.
 
 Each behavior creates a back-end widget for the functionality. This is what we will use for our form and list.
 
@@ -19,7 +19,7 @@ Inside the `update` action, let's prepare the form widget. First we must tell th
         $config = $this->makeConfig('$/acme/formist/models/customer/fields.yaml');
     }
 
-We should also tell the form widget about the associated model, passed to the newly generated config as the `model` property:
+We should also tell the form widget about the associated model, passed to the newly generated config as the `model` property.
 
     public function update($id = null)
     {
@@ -41,7 +41,7 @@ Finally, the widget can be created using the `$this->makeWidget` method, passing
         $this->vars['widget'] = $widget;
     }
 
-To render the form, open the **update.htm** view file and simply call the `render()` method on the widget. The widget should be wrapped in a form so the data can be captured.
+To render the form, open the **update.htm** view file and simply call the `render()` method on the widget. The widget should also be wrapped in a HTML form so the postback data can be captured.
 
     <?= Form::open() ?>
         <?= $widget->render() ?>
@@ -51,7 +51,7 @@ To render the form, open the **update.htm** view file and simply call the `rende
         </button>
     <?= Form::close() ?>
 
-Let's update the AJAX handler to capture the form data.
+Let's update the AJAX handler to capture the form postback data.
 
     public function onUpdate($id = null)
     {
@@ -95,7 +95,7 @@ To tell the form about existing data, change the `model` in the configuration to
 
 Now open the URL **/backend/acme/formist/mycontroller/update/1** to find the Customer with the ID of 1. We just built a simplified version of the `FormController` behavior's `update` action!
 
-Creating a list for the `index` action is just as easy. We pass the list column file to the `makeConfig` method, specify the `model` and make the `Backend\Widgets\Lists` widget instead.
+Creating a list for the `index` action is just as easy. We pass the list column file to the `makeConfig` method, specify a new `model` instance and make the `Backend\Widgets\Lists` widget class instead.
 
     public function index()
     {
@@ -112,11 +112,11 @@ Inside the corresponding view file **plugins/acme/formist/controllers/mycontroll
 
     <?= $widget->render() ?>
 
-Now open the URL **/backend/acme/formist/mycontroller** to see the rendered list. If try to sort the list, by clicking a column header, you will see an error message:
+Now open the URL **/backend/acme/formist/mycontroller** to see the rendered list. Notice if we try to sort the list, by clicking a column header, an error message is displayed:
 
     A widget with class name 'list' has not been bound to the controller
 
-This is because widgets themselves can provide AJAX handlers for their functionality, however the controller be informed of this. We register the widget to the controller using the `bindToController` method.
+This is because widgets themselves can provide AJAX handlers for their functionality, however the controller should be informed of this. We register the widget to the controller using the `bindToController` method.
 
     public function index()
     {
@@ -148,4 +148,4 @@ Now let's link our list to our form by specifying a `recordUrl` in the widget co
 
 Now we have a simplified version of the `ListController` behavior's `index` action!
 
-Hopefully we have demonstrated these behaviors are useful companions to building in the back-end, they can save a lot of time. However, behaviors are not a necessity to build powerful back-end interfaces. Like opening the hood of a car, there are many components you can borrow to build your own hot rod!
+Here we have demonstrated that behaviors are useful companions to building in the back-end, they can save a lot of time. However, behaviors are not a necessity to build powerful back-end interfaces. Like opening the hood of a car, there are many components you can borrow to build your own custom hot rod!
