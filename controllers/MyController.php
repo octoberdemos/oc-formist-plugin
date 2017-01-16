@@ -23,6 +23,8 @@ class MyController extends Controller
 
         $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
 
+        $widget->bindToController();
+
         $this->vars['widget'] = $widget;
     }
 

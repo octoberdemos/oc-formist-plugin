@@ -143,6 +143,8 @@ Now let's link our list to our form by specifying a `recordUrl` in the widget co
 
         $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
 
+        $widget->bindToController();
+
         $this->vars['widget'] = $widget;
     }
 

@@ -23,7 +23,7 @@ Example controller that implements behaviors:
         public $relationConfig = 'config_relation.yaml';
     }
 
-These are all great for simple management of your data. Although sometimes you will encounter more complex situations where the demands are too much for behaviors.
+These are all great for simple management of your data. Although sometimes you will encounter more complex situations where the demands are too much for these behaviors.
 
 Here we'll show you how to get back to basics and follow the principals of MVC to get similar results. We will implement the controller behavior's logic by hand, starting with a basic [back-end controller](/docs/backend/controllers-ajax).
 
