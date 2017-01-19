@@ -10,16 +10,16 @@ columns:
         label: Created
         type: timeSince
 
-    # items_count:
-    #     label: No of products
-    #     type: partial
-    #     path: $/acme/formist/controllers/orders/_items_count.htm
-    #     cssClass: text-center
-    #     width: 100px
+    items_count:
+        label: No of products
+        type: partial
+        path: $/acme/formist/models/order/_column_items_count.htm
+        cssClass: text-center
+        width: 100px
 
-    # complete_price:
-    #     label: Total price
-    #     type: partial
-    #     path: $/acme/formist/controllers/orders/_complete_price.htm
-    #     cssClass: text-center
-    #     width: 100px
+    complete_price:
+        label: Total price
+        type: partial
+        path: $/acme/formist/models/order/_column_complete_price.htm
+        cssClass: text-center
+        width: 100px

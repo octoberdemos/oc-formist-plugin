@@ -26,11 +26,13 @@ class Customers extends Controller
 
         BackendMenu::setContext('Acme.Formist', 'formist', 'customers');
 
-        $this->createOrderItemFormWidget();
+        $this->itemFormWidget = $this->createOrderItemFormWidget();
     }
 
-    public function onCreateItemForm()
+    public function onLoadCreateItemForm()
     {
+        $this->vars['itemFormWidget'] = $this->itemFormWidget;
+
         $this->vars['orderId'] = post('manage_id');
 
         return $this->makePartial('item_create_form');
@@ -66,17 +68,6 @@ class Customers extends Controller
         return $this->refreshOrderItemList();
     }
 
-    protected function getOrderModel()
-    {
-        $manageId = post('manage_id');
-
-        $order = $manageId
-            ? \Acme\Formist\Models\Order::find($manageId)
-            : new \Acme\Formist\Models\Order;
-
-        return $order;
-    }
-
     protected function refreshOrderItemList()
     {
         $items = $this->getOrderModel()
@@ -88,6 +79,17 @@ class Customers extends Controller
         $this->vars['items'] = $items;
 
         return ['#itemList' => $this->makePartial('item_list')];
+    }
+
+    protected function getOrderModel()
+    {
+        $manageId = post('manage_id');
+
+        $order = $manageId
+            ? \Acme\Formist\Models\Order::find($manageId)
+            : new \Acme\Formist\Models\Order;
+
+        return $order;
     }
 
     protected function createOrderItemFormWidget()
@@ -104,9 +106,6 @@ class Customers extends Controller
 
         $widget->bindToController();
 
-        $this->itemFormWidget = $this->vars['itemFormWidget'] = $widget;
-
         return $widget;
     }
-
 }

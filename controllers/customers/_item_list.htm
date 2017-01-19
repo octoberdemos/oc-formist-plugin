@@ -13,6 +13,7 @@
                     <?php foreach ($items as $item): ?>
                         <tr>
                             <td>
+                                <?= e($item->qty) ?> x
                                 <?= e($item->product ? $item->product->name : 'Unknown') ?>
                             </td>
                             <td>

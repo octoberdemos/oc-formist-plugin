@@ -129,7 +129,7 @@ This is because widgets themselves can provide AJAX handlers for their functiona
         $this->vars['widget'] = $widget;
     }
 
-It is important to note that this binding must occur early in the page life cycle. This means `bindToController` must be called either in a page action method, or inside the `__construct()` method of a controller.
+It is important to note that this binding must occur early in the page life cycle. This means `bindToController` must be called either in a page action method, inside the `__construct()` method of a controller, or inside the `init()` method of a widget.
 
 Now let's link our list to our form by specifying a `recordUrl` in the widget configuration. Now when a record is clicked, it will take the user to the `update` action we created earlier.
 

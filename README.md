@@ -1,10 +1,10 @@
 # Sample Custom Form & List Plugin
 
-A sample Form & List plugin for OctoberCMS used in the presentation [Beyond Behaviors](https://vimeo.com/xxx).
+A sample Form & List plugin for OctoberCMS used in the presentation **Beyond Behaviors**.
 
-* [View the screencast presentation](https://vimeo.com/xxx)
-
-> **Note:** This is a work in progress - Screencasts are not completed yet. See the PART1.md, PART2.md, etc files for their scripts.
+* [View Part 1: How MVC works in October CMS](http://octobercms.com/support/article/ob-19)
+* View Part 2: Rendering Lists and Forms by hand (TBA)
+* View Part 3: Example implementation (TBA)
 
 ## Using this plugin 
 
