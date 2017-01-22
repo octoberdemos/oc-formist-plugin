@@ -3,8 +3,8 @@
 A sample Form & List plugin for OctoberCMS used in the presentation **Beyond Behaviors**.
 
 * [View Part 1: How MVC works in October CMS](http://octobercms.com/support/article/ob-19)
-* View Part 2: Rendering Lists and Forms by hand (TBA)
-* View Part 3: Example implementation (TBA)
+* [View Part 2: Rendering Lists and Forms by hand](http://octobercms.com/support/article/ob-20)
+* [View Part 3: Example implementation](http://octobercms.com/support/article/ob-21)
 
 ## Using this plugin 
 
