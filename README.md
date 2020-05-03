@@ -8,7 +8,9 @@ A sample Form & List plugin for OctoberCMS used in the presentation **Beyond Beh
 
 ## Using this plugin 
 
-To install this plugin, extract this archive to `/plugins/acme/formist` and migrate the database by performing one of the following:
+To install this plugin, first install the [Faker](https://octobercms.com/plugin/rahman-faker) plugin.
+
+Then extract this archive to `/plugins/acme/formist` and migrate the database by performing one of the following:
 
 1. Log out and sign back in to the back-end; or
 2. Run CLI command `php artisan october:up`
