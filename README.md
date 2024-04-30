@@ -6,6 +6,14 @@ A sample Form & List plugin for OctoberCMS used in the presentation **Beyond Beh
 * [View Part 2: Rendering Lists and Forms by hand](http://octobercms.com/support/article/ob-20)
 * [View Part 3: Example implementation](http://octobercms.com/support/article/ob-21)
 
+## Requirements
+
+Install the Faker package.
+
+```
+composer require fakerphp/faker
+```
+
 ## Using this plugin 
 
 To install this plugin, extract this archive to `/plugins/acme/formist` and migrate the database by performing one of the following:
